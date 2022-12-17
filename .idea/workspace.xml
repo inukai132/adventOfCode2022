@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day17 ~not done~">
+    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day17 ~p1 done~">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day17/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day17/solve.py" afterDir="false" />
     </list>
@@ -22,16 +22,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/ctf/advent&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.dataViews.python.type.renderers&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "F:/ctf/advent",
+    "settings.editor.selected.configurable": "debugger.dataViews.python.type.renderers"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ctf\advent" />
@@ -67,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671258278164</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="day17 ~p1 done~">
+      <created>1671294518251</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671294518251</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -84,7 +96,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="day16" />
     <MESSAGE value="day17 ~not done~" />
-    <option name="LAST_COMMIT_MESSAGE" value="day17 ~not done~" />
+    <MESSAGE value="day17 ~p1 done~" />
+    <option name="LAST_COMMIT_MESSAGE" value="day17 ~p1 done~" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -163,18 +176,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="151" />
+          <line>50</line>
+          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>123</line>
-          <option name="timeStamp" value="152" />
+          <line>198</line>
+          <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>138</line>
-          <option name="timeStamp" value="154" />
+          <line>87</line>
+          <option name="timeStamp" value="179" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
