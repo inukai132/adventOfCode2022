@@ -15,6 +15,7 @@ class Board:
     self.spawnY = len(self.field)-3
     self.width = width
     self.settled = True
+    self.height = 0
 
   def pointOccupied(self,x,y):
     return self.field[y][x] in '#@'
@@ -45,9 +46,13 @@ class Board:
         p = self.rock.pattern.split('\n')
         if p[y][x] == '#':
           self.field[self.rock.y+y] = self.field[self.rock.y+y][:self.rock.x+x]+'#'+self.field[self.rock.y+y][self.rock.x+x+1:]
+    if '#'*7 in self.field:
+      newFloor = self.field.index('#'*7)
+      self.height += len(self.field) - newFloor
+      self.field = self.field[:newFloor]
     for i,l in enumerate(self.field):
       if '#' in l:
-        while abs(self.getHeight()-len(self.field)) < 10:
+        while abs(self.getHeight()-len(self.field)) < 5:
           self.field = [' '*self.width]+self.field
         self.spawnY = i-3
         break
@@ -65,7 +70,7 @@ class Board:
     self.settled = False
 
   def getHeight(self):
-    return sum(['#' in l for l in self.field])
+    return self.height+sum(['#' in l for l in self.field])
 
   def __repr__(self):
     if len(self.field) > 50:
@@ -110,19 +115,38 @@ if __name__ == '__main__':
   ins = '''>>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>'''
 
   b = Board(WIDTH)
-  ins_i = 0
-  for r in range(2023):
-    rock_i = r%len(rocks)
+  fallStep = False
+  #for r_ in range(1000000000000+1):
+  for r_ in range(2022+1):
+    rock_i = r_%len(rocks)
+    fallStep = False
     pattern = rocks[rock_i]
     b.addRock(pattern)
+    rock = b.rock
+    l = rock.x
+    r = rock.x+rock.width
+    Xshift = 0
+    Yshift = 3
+    for c in ins[:4]:
+      if c == '<' and l+Xshift == 0:
+        continue
+      if c == '>' and r+Xshift == 7:
+        continue
+      Xshift += 1 if c == '>' else -1
+    fallStep = True
+    rock.x += Xshift
+    rock.y += Yshift
+    ins = ins[4:]+ins[:4]
     #print(b)
-    print(b.getHeight())
+    print(f"{b.getHeight()+b.height} - {r_}")
+    if b.getHeight() < 50:
+      print(b)
     while not b.settled:
-      if (ins_i & 1) == 0:
-        b.step(ins[ins_i//2])
+      if not fallStep:
+        b.step(ins[0])
+        l=len(ins)
+        ins = ins[1:]+ins[0]
+        assert(l==len(ins))
       else:
         b.step('V')
-      #print(b)
-      #print(b.getHeight())
-      ins_i += 1
-      ins_i %= len(ins)*2
+      fallStep = not fallStep
