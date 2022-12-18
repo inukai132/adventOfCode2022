@@ -1,3 +1,4 @@
+import time
 from pprint import pprint
 from collections import deque
 
@@ -79,11 +80,15 @@ class Board:
       self.field = self.field[1:]
       self.spawnY -= 1
     for x in range(self.width):
+      found = False
       for i,row in enumerate(self.field):
         if row[x] == '#':
           newFloor = max(newFloor,i)
+          found = True
           break
+      if not found:
         return
+
     self.height += len(self.field)-newFloor
     self.field = self.field[:newFloor]
 
@@ -119,15 +124,14 @@ class Rock:
         return (self.x, self.y+1)
 
 
-def dropRock(r_):
-  global  ins, b
+def dropRock(b, r_, ins):
   rock_i = r_ % len(rocks)
   fallStep = False
   pattern = rocks[rock_i]
   b.addRock(pattern)
   # if debug:
   #  print(b)
-  rock = b.rock
+  '''rock = b.rock
   l = rock.x
   r = rock.x + rock.width - 1
   Xshift = 0
@@ -141,7 +145,7 @@ def dropRock(r_):
   fallStep = True
   rock.x += Xshift
   rock.y += Yshift
-  ins = ins[4:] + ins[:4]
+  ins = ins[4:] + ins[:4]'''
   # if debug:
   #  print(b)
   # if r_ % 10000 == 0:
@@ -157,97 +161,109 @@ def dropRock(r_):
     fallStep = not fallStep
     # if debug:
     #  print(b)
+  #b.simplify()
+  return ins
 
+def getScoreCycle():
+  global rocks
+  ins = resetIns()
+  b = Board(7)
+  scores = []
+  lastIdx = -1
+  i=0
+  for r_ in range(len(ins)*len(rocks)):
+    ins = dropRock(b,r_,ins)
+  lastScore = b.getHeight()
+  while len(scores) < len(ins)*len(rocks):
+    r_ += 1
+    ins = dropRock(b,r_,ins)
+    score = b.getHeight()-lastScore
+    lastScore=b.getHeight()
+    scores.append(score)
+  cycle = findRepeat(scores)
+  return cycle,scores[:cycle]
+
+def findRepeat(seq):
+  guess = 1
+  max_len = len(seq) // 4
+  for x in range(2, max_len):
+    if seq[0:x] == seq[x:2 * x] and seq[x:2 * x] == seq[2 * x:3 * x] and seq[2 * x:3 * x] == seq[3 * x:4 * x]:
+      #guess = max(guess, x)
+      return x
+
+  return guess
+
+def resetIns():
+  ins = open('input.txt').read().strip()
+  ins_ = '''>>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>'''
+  return ins
 
 if __name__ == '__main__':
 
   rocks = ['####',' # \n###\n # ','  #\n  #\n###','#\n#\n#\n#','##\n##']
 
   WIDTH=7
+  fallStep = False
+  p1 = False
+  iter = 2022 if p1 else 1000000000000
+  #floorCycleLen = 7 if len(ins) < 100 else 242
 
-  ins = open('input.txt').read().strip()
-  ins = '''>>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>'''
+  scoreCycleLen, scoreCycle = getScoreCycle()
+  print(scoreCycleLen)
+  print(scoreCycle)
+
+  ins = resetIns()
 
   b = Board(WIDTH)
-  fallStep = False
-  p1 = True
-  iter = 2022+1 if p1 else 1000000000000+1
-  floorCycleLen = 7 if len(ins) < 100 else 242
-  cycleLen = len(ins)*len(rocks)
-  print(cycleLen)
-  floors = []
-  heights = []
-  lastHeight = 0
-  for r_ in range(floorCycleLen*cycleLen):
-    dropRock(r_)
-    b.simplify()
-  for r_ in range(floorCycleLen * cycleLen):
-    if len(floors) != floorCycleLen:
-      floors.append(b.field)
-    heights.append(b.getHeight()-lastHeight)
-    lastHeight = b.getHeight()
-    print(r_,heights[-1])
 
-  quit(0)
-  lastHeight = 0
+  if iter < 10000 and False:
+    scores = []
+    lastScore = 0
+    for r_ in range(iter):
+      ins = dropRock(b,r_,ins)
+      scores.append(b.getHeight()-lastScore)
+      lastScore = b.getHeight()
+    print(scores)
+    print(sum(scores))
+    quit(0)
+  '''floors = []
+  i=0
+  while i<200000:
+    ins = dropRock(b,i,ins)
+    i+=1
+    f = b.field
+    if f in floors:
+      print(floors.index(f))
+    floors.append(f)'''
 
-  for i in range(floorCycleLen):
-    for r_ in range(cycleLen):
-      dropRock(r_+1)
-    b.simplify()
-    #print(b)
-    f = b.field.copy()
-    if f not in floors:
-      print("Floor not in results")
-    else:
-      print(F"Found floor {floors.index(f)}")
-    floors.append(f)
-    heights.append(b.getHeight()-lastHeight)
-    print(f"Height: {b.getHeight()}")
-  print(len(floors))
+  #Plan: First and last loop are scuffed so they have to be calced seperately
+  #Calc first loop, then calc second loop. Second loop * total loops-2, then calc last loop
 
+  firstLen = len(ins)*len(rocks)
+  firstCycle = 0
+  firstCycleSize = (27,100)[1]
+  scoreCycleLen = (35,1715)[1]
+  debugScores = []
+  #35 for testin, 27 to skip start
+  #1730 for realin, 100 to skip start
+  lastScore = 0
+  for r_ in range(firstCycleSize):
+    ins = dropRock(b, r_, ins)
+    debugScores.append(b.getHeight()-lastScore)
+    lastScore = b.getHeight()
+  firstCycle = b.getHeight()
 
+  scoreCycleRecalc = []
+  lastScore = b.getHeight()
+  for _ in range(scoreCycleLen):
+    r_ += 1
+    ins = dropRock(b, r_, ins)
+    scoreCycleRecalc.append(b.getHeight()-lastScore)
+    debugScores.append(b.getHeight()-lastScore)
+    lastScore = b.getHeight()
+  print(debugScores+scoreCycleRecalc)
+  print(scoreCycleRecalc)
+  cycles = (iter-firstCycleSize)//scoreCycleLen
+  lastCycles = (iter-firstCycleSize)%scoreCycleLen
+  print(firstCycle+sum(scoreCycleRecalc)*cycles+sum(scoreCycleRecalc[:lastCycles]))
 
-
-
-
-  quit(0)
-  finalFloor = floors[iter // floorCycleLen]
-  for r_ in range(iter%floorCycleLen):
-    rock_i = r_ % len(rocks)
-    fallStep = False
-    pattern = rocks[rock_i]
-    b.addRock(pattern)
-    # if debug:
-    #  print(b)
-    rock = b.rock
-    l = rock.x
-    r = rock.x + rock.width - 1
-    Xshift = 0
-    Yshift = 3
-    for c in ins[:4]:
-      if c == '<' and l + Xshift == 0:
-        continue
-      if c == '>' and r + Xshift == 6:
-        continue
-      Xshift += 1 if c == '>' else -1
-    fallStep = True
-    rock.x += Xshift
-    rock.y += Yshift
-    ins = ins[4:] + ins[:4]
-    # if debug:
-    #  print(b)
-    # if r_ % 10000 == 0:
-    #  print(f"{b.getHeight()+b.height} - {r_}")
-    while not b.settled:
-      if not fallStep:
-        b.step(ins[0])
-        l = len(ins)
-        ins = ins[1:] + ins[0]
-        assert (l == len(ins))
-      else:
-        b.step('V')
-      fallStep = not fallStep
-      # if debug:
-      #  print(b)
-  b.simplify()

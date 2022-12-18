@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day17 ~p1 done~">
+      <change beforePath="$PROJECT_DIR$/.idea/advent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day17/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day17/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day17/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day17/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day18/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day18/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day18/solve.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +37,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "F:/ctf/advent",
-    "settings.editor.selected.configurable": "debugger.dataViews.python.type.renderers"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
       "Python"
     ]
   }
@@ -176,18 +185,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="169" />
+          <line>267</line>
+          <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="178" />
+          <line>253</line>
+          <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day17/solve.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="179" />
+          <line>265</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day18/solve.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day18/solve.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day17/solve.py</url>
+          <line>225</line>
+          <option name="timeStamp" value="222" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
