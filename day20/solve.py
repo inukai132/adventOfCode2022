@@ -43,15 +43,6 @@ class DLL:
     if not n:
       return None
     amt %= len(self.nodes)-1
-    nr = self.get(n.val,-amt)
-    nl = nr.left
-    l = n.left
-    r = n.right
-    nl.linkRight(n)
-    nr.linkLeft(n)
-    l.linkRight(r)
-
-    n = self.search(val)
     if not n:
       return None
     amt %= len(self.nodes)-1
@@ -69,17 +60,6 @@ class DLL:
     if not n:
       return None
     amt %= len(self.nodes)-1
-    nr = self.get(n.val,amt)
-    nl = nr.left
-    l = n.left
-    r = n.right
-    nl.linkRight(n)
-    nr.linkLeft(n)
-    l.linkRight(r)
-
-
-    return
-
     for _ in range(amt):
       l = n.left
       r = n.right
@@ -111,11 +91,14 @@ class DLL:
     return F"List with len {len(self.nodes)}: {s}"
 
 
+def seek(dq : deque, v):
+    dq.rotate(-dq.index(v))
+    assert (dq[0] == v)
 
 
 if __name__ == '__main__':
-  ins = [int(a) for a in open('input.txt').read().split('\n')]
-  ins_ = [int(a) for a in '''1
+  ins = [int(a)*811589153 for a in open('input.txt').read().split('\n')]
+  ins_ = [int(a)*811589153 for a in '''1
 2
 -3
 3
@@ -123,6 +106,31 @@ if __name__ == '__main__':
 0
 4'''.split('\n')]
 
+  ring = deque()
+  z = None
+  for i,l in enumerate(ins):
+    ring.append((l,i))
+    if l == 0:
+      z = (l,i)
+  for _ in range(10):
+    for i,l in enumerate(ins):
+      seek(ring,(l,i))
+      x = ring.popleft()
+      ring.rotate(-l)
+      ring.appendleft(x)
+
+  s = []
+  seek(ring,z)
+  for x in range(3):
+    ring.rotate(-1000)
+    s.append(ring[0][0])
+
+  print(s)
+  print(sum(s))
+
+
+
+'''
   ll = DLL(ins.copy())
 
   for l in ins:
@@ -131,3 +139,4 @@ if __name__ == '__main__':
     else:
       ll.shiftLeft(l,-l)
   print(sum(ll.get(0,x).val for x in [1000,2000,3000]))
+'''
