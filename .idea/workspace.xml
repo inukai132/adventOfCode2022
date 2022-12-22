@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day17 ~p1 done~">
-      <change beforePath="$PROJECT_DIR$/.idea/advent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day20 done~~">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day20/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day20/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day21/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day21/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day21/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day21/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day22/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day22/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day22/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day22/solve.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671294518251</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="day20 done~~">
+      <created>1671577847887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671577847887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,7 +107,8 @@
     <MESSAGE value="day16" />
     <MESSAGE value="day17 ~not done~" />
     <MESSAGE value="day17 ~p1 done~" />
-    <option name="LAST_COMMIT_MESSAGE" value="day17 ~p1 done~" />
+    <MESSAGE value="day20 done~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="day20 done~~" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -200,6 +209,17 @@
           <url>file://$PROJECT_DIR$/day20/solve.py</url>
           <line>123</line>
           <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day22/solve.py</url>
+          <line>242</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="i&gt;=3999" language="Python" />
+          <url>file://$PROJECT_DIR$/day22/solve.py</url>
+          <line>164</line>
+          <option name="timeStamp" value="215" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
