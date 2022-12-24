@@ -157,10 +157,10 @@ if __name__ == '__main__':
 
   curPos = [0,0,2] #x,y,face; x and y are unfolded coords
   curHead = headings[0]
-  #path = [25,25,'L',25,25,25,25,25,25,25,25,25,25,'L','L',25,25,25,25,25,25,25,25,25,25]
+  #path = [5,'R',5,'L',200,'L','L',200,'L',200,'R','R',200,'L',50,'R',200,'R','R',200]
   taken = []
   for i,inst in enumerate(path):
-    open('debug.txt','w').write(printMap(faces, curPos))
+    #open('debug.txt','w').write(printMap(faces, curPos))
     print(inst)
     match inst:
       case 'L':
@@ -238,10 +238,13 @@ if __name__ == '__main__':
               curPos = newPos+[newFace]
               taken.append((newPos[0], newPos[1], newFace, curHead))
               continue
+            case _:
+              print(F"HELP I'VE LEFT THE CUBE. {newPos}, {newFace}")
+              quit(-1)
 
   open('debug.txt', 'w').write(printMap(faces, curPos))
-  tPos = [curPos[0]+faceULCorners[curPos[2]-1][0],curPos[1]+faceULCorners[curPos[2]-1][1]]
+  tPos = [curPos[0]+faceULCorners[curPos[2]-1][0]+1,curPos[1]+faceULCorners[curPos[2]-1][1]+1]
   print(curPos)
   print(tPos)
   print(curHead)
-  print(1000*(tPos[1]+1)+4*(tPos[0]+1)+headings.index(curHead))
+  print(1000*(tPos[1])+4*(tPos[0])+headings.index(curHead))

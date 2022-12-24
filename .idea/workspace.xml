@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="day20 done~~">
+    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="days 17 and 18 done~~~">
+      <change beforePath="$PROJECT_DIR$/.idea/advent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day21/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day21/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day21/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day21/solve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day22/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day22/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day22/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day22/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day23/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day23/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day24/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day24/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day24/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day24/solve.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,14 +218,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day22/solve.py</url>
-          <line>242</line>
+          <line>245</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <condition expression="i&gt;=3999" language="Python" />
+          <url>file://$PROJECT_DIR$/day23/solve.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day22/solve.py</url>
           <line>164</line>
-          <option name="timeStamp" value="215" />
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day22/solve.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="318" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day24/solve.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="341" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
