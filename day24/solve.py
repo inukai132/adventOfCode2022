@@ -146,7 +146,7 @@ if __name__ == '__main__':
     timesteps.append(getStage(blizzards))
   assert timesteps[0] == timesteps[-1]
   timesteps = timesteps[:-1]
-  print("Running bfs")
+  print("Running A*")
   path1,cost1 = aStar(start,end, timesteps)
   print(cost1)
   path2,cost2 = aStar(end,start, timesteps, cost1)

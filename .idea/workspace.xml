@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="days 17 and 18 done~~~">
-      <change beforePath="$PROJECT_DIR$/.idea/advent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day22/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day22/solve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day23/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day23/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day23/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day23/solve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day24/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day24/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day24/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day24/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day25/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day25/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day25/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day25/solve.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +236,21 @@
           <url>file://$PROJECT_DIR$/day24/solve.py</url>
           <line>149</line>
           <option name="timeStamp" value="341" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day25/solve.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="343" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day25/solve.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="352" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day25/solve.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="354" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
