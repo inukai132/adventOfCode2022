@@ -16,12 +16,14 @@ def printMap(faces, curPos = None):
   for i in range(50):
     map.append(pFaces[5][i]+' '*100)
 
-  for step in taken:
+  for step in taken[-100:]:
     tPos = [step[0] + faceULCorners[step[2] - 1][0], step[1] + faceULCorners[step[2] - 1][1]]
-    map[tPos[1]] = map[tPos[1]][:tPos[0]] + ">V<^"[headings.index(step[3])] + map[tPos[1]][tPos[0]+1:]
+    #map[tPos[1]] = map[tPos[1]][:tPos[0]] + ">V<^"[headings.index(step[3])] + map[tPos[1]][tPos[0]+1:]
+    map[tPos[1]] = map[tPos[1]][:tPos[0]] + "XXXX"[headings.index(step[3])] + map[tPos[1]][tPos[0]+1:]
   if curPos:
     tPos = [curPos[0] + faceULCorners[curPos[2] - 1][0], curPos[1] + faceULCorners[curPos[2] - 1][1]]
-    map[tPos[1]] = map[tPos[1]][:tPos[0]] + ">V<^"[headings.index(curHead)] + map[tPos[1]][tPos[0]+1:]
+    #map[tPos[1]] = map[tPos[1]][:tPos[0]] + ">V<^"[headings.index(curHead)] + map[tPos[1]][tPos[0]+1:]
+    map[tPos[1]] = map[tPos[1]][:tPos[0]] + "XXXX"[headings.index(curHead)] + map[tPos[1]][tPos[0]+1:]
   print('\n'.join(map))
   return '\n'.join(map)
 
@@ -157,11 +159,13 @@ if __name__ == '__main__':
 
   curPos = [0,0,2] #x,y,face; x and y are unfolded coords
   curHead = headings[0]
-  #path = [5,'R',5,'L',200,'L','L',200,'L',200,'R','R',200,'L',50,'R',200,'R','R',200]
-  taken = []
+  #path = ['L',1,'R',2]
+  taken = [curPos+[curHead]]
   for i,inst in enumerate(path):
     #open('debug.txt','w').write(printMap(faces, curPos))
-    print(inst)
+    tPos = [curPos[0] + faceULCorners[curPos[2] - 1][0] + 1, curPos[1] + faceULCorners[curPos[2] - 1][1] + 1]
+    #print(tPos, headings.index(curHead))
+    #print(inst)
     match inst:
       case 'L':
         curHead = headings[(headings.index(curHead)-1)%4]
@@ -171,21 +175,22 @@ if __name__ == '__main__':
         for _ in range(inst):
           newPos = [(curPos[i]+curHead[i]) for i in range(2)]
           newFace = curPos[2]
+          newHead = curHead
           if newPos[0] < 0: #We moved left off the face
             newFace,enterDir = nets[curPos[2]][3]
             match enterDir:
               case 'u':
                 newPos = [newPos[1],0]
-                curHead = headings[1]
+                newHead = headings[1]
               case 'd':
                 print(f"HELP L->D {curPos} , {inst}, {newPos}")
                 quit(-1)
               case 'l':
                 newPos = [0,49-newPos[1]]
-                curHead = headings[0]
+                newHead = headings[0]
               case 'r':
                 newPos = [49,newPos[1]]
-                curHead = headings[2]
+                newHead = headings[2]
           if newPos[0] >= 50: #We moved right off the face
             newFace,enterDir = nets[curPos[2]][1]
             match enterDir:
@@ -194,13 +199,13 @@ if __name__ == '__main__':
                 quit(-1)
               case 'd':
                 newPos = [newPos[1],49]
-                curHead = headings[3]
+                newHead = headings[3]
               case 'l':
                 newPos = [0,newPos[1]]
-                curHead = headings[0]
+                newHead = headings[0]
               case 'r':
                 newPos = [49,49-newPos[1]]
-                curHead = headings[2]
+                newHead = headings[2]
           if newPos[1] < 0: #We moved up off the face
             newFace,enterDir = nets[curPos[2]][0]
             match enterDir:
@@ -209,10 +214,10 @@ if __name__ == '__main__':
                 quit(-1)
               case 'd':
                 newPos = [newPos[0],49]
-                curHead = headings[3]
+                newHead = headings[3]
               case 'l':
                 newPos = [0,newPos[0]]
-                curHead = headings[0]
+                newHead = headings[0]
               case 'r':
                 print(f"HELP U->R {curPos} , {inst}, {newPos}")
                 quit(-1)
@@ -221,7 +226,7 @@ if __name__ == '__main__':
             match enterDir:
               case 'u':
                 newPos = [newPos[0],0]
-                curHead = headings[1]
+                newHead = headings[1]
               case 'd':
                 print(f"HELP D->D {curPos} , {inst}, {newPos}")
                 quit(-1)
@@ -230,12 +235,13 @@ if __name__ == '__main__':
                 quit(-1)
               case 'r':
                 newPos = [49,newPos[0]]
-                curHead = headings[2]
+                newHead = headings[2]
           match faces[newFace-1][newPos[1]][newPos[0]]:
             case '#':
               break
             case '.':
               curPos = newPos+[newFace]
+              curHead = newHead
               taken.append((newPos[0], newPos[1], newFace, curHead))
               continue
             case _:

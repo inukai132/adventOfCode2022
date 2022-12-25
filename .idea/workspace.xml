@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="days 17 and 18 done~~~">
+    <list default="true" id="138d303f-c71d-4079-8524-f13aab29978b" name="Changes" comment="Done with all but 22p2 😢😢😢😢">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day24/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day24/solve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day25/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day25/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day25/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day25/solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day22/solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/day22/solve.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,21 +25,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/ctf/advent&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.dataViews.python.type.renderers&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/wolvy/AppData/Roaming/JetBrains/PyCharmCE2022.3/scratches/scratch_4.txt",
+    "settings.editor.selected.configurable": "debugger.dataViews.python.type.renderers",
+    "two.files.diff.last.used.file": "C:/Users/wolvy/AppData/Roaming/JetBrains/PyCharmCE2022.3/scratches/scratch_4.txt"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ctf\advent" />
@@ -91,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671577847887</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Done with all but 22p2 😢😢😢😢">
+      <created>1671949617042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671949617042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +117,8 @@
     <MESSAGE value="day17 ~not done~" />
     <MESSAGE value="day17 ~p1 done~" />
     <MESSAGE value="day20 done~~" />
-    <option name="LAST_COMMIT_MESSAGE" value="day20 done~~" />
+    <MESSAGE value="Done with all but 22p2 " />
+    <option name="LAST_COMMIT_MESSAGE" value="Done with all but 22p2 " />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,24 +221,9 @@
           <option name="timeStamp" value="197" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/day22/solve.py</url>
-          <line>245</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day23/solve.py</url>
           <line>67</line>
           <option name="timeStamp" value="311" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/day22/solve.py</url>
-          <line>164</line>
-          <option name="timeStamp" value="316" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/day22/solve.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="318" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/day24/solve.py</url>
@@ -251,6 +244,26 @@
           <url>file://$PROJECT_DIR$/day25/solve.py</url>
           <line>20</line>
           <option name="timeStamp" value="354" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day22/solve.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="362" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py</url>
+          <line>341</line>
+          <option name="timeStamp" value="365" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/day22/solve.py</url>
+          <line>107</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py</url>
+          <line>336</line>
+          <option name="timeStamp" value="367" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
